@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="ITIL-Summrized">
+    <meta name="description" content="Student guide for the ITIL 4 Foundation">
+    <meta name="author" content="Mosquito">
+    <link href="contents/favicon.ico" rel="icon">
+    <title>Felixent : ITIL 4 Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #0077B6;
+        }
+    </style>
+</head>
+<body class="bg-[#CAF0F8]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#00446A] mb-2">ITIL® 4 Foundation</h1>
+            <p class="text-xl md:text-2xl text-[#0077B6]">Guide to Service Management Excellence</p>
+        </header>
+
+        <main>
+            <section id="introduction" class="mb-16">
+                 <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 text-center">
+                    <h2 class="text-3xl font-bold text-[#00446A] mb-4">What is ITIL 4?</h2>
+                    <p class="text-lg text-[#0077B6] max-w-3xl mx-auto">
+                        ITIL 4 is a framework designed to help organizations manage modern IT-enabled services. It provides a holistic approach to service management that focuses on the co-creation of value with customers and other stakeholders. This guide visualizes the core components you need to know for the Foundation certification.
+                    </p>
+                </div>
+            </section>
+
+            <section id="principles" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#00446A]">The 7 Guiding Principles</h2>
+                    <p class="text-lg text-[#0077B6]">These are the core philosophies of ITIL 4, guiding an organization's decisions and actions.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">🎯</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Focus on Value</h3>
+                        <p class="text-[#0077B6]">Everything the organization does must link back, directly or indirectly, to value for its stakeholders.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">🚀</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Start Where You Are</h3>
+                        <p class="text-[#0077B6]">Don't start from scratch without considering what is already available. Assess and leverage existing resources.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">🔄</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Progress Iteratively with Feedback</h3>
+                        <p class="text-[#0077B6]">Organize work into smaller, manageable sections. Each iteration builds upon the previous, incorporating feedback.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">🤝</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Collaborate & Promote Visibility</h3>
+                        <p class="text-[#0077B6]">Work together across boundaries. Involving the right people at the right time leads to better results.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">🌍</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Think & Work Holistically</h3>
+                        <p class="text-[#0077B6]">No service, practice, or process stands alone. Understand the whole system and how its parts interact.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">✨</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Keep It Simple & Practical</h3>
+                        <p class="text-[#0077B6]">Use the minimum number of steps to accomplish an objective. Outcome-based thinking produces practical solutions.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-2">🤖</div>
+                        <h3 class="text-xl font-bold text-[#00446A] mb-2">Optimize & Automate</h3>
+                        <p class="text-[#0077B6]">Maximize the value of work done by humans and technology. Automate frequent and repetitive tasks.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="four-dimensions" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <div class="text-center mb-6">
+                        <h2 class="text-3xl font-bold text-[#00446A]">The Four Dimensions of Service Management</h2>
+                        <p class="text-lg text-[#0077B6] max-w-3xl mx-auto">To ensure a holistic approach, ITIL 4 outlines four dimensions that are critical to the effective and efficient facilitation of value for customers and other stakeholders.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="fourDimensionsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="svs" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-[#00446A]">The Service Value System (SVS)</h2>
+                        <p class="text-lg text-[#0077B6] max-w-3xl mx-auto">The SVS represents how the components and activities of the organization work together as a system to enable value creation.</p>
+                    </div>
+                    <div class="w-full max-w-4xl mx-auto border-4 border-[#00446A] rounded-lg p-4 bg-[#CAF0F8]">
+                        <div class="grid grid-cols-5 gap-4 items-center">
+                            <div class="text-center col-span-1">
+                                <div class="font-bold text-[#00446A]">Opportunity</div>
+                                <div class="text-4xl">↓</div>
+                                <div class="font-bold text-[#00446A]">Demand</div>
+                            </div>
+                            <div class="col-span-3 border-2 border-[#00A8E8] rounded-lg p-4 bg-white">
+                                <div class="text-center font-bold text-lg text-[#00446A] mb-2">Service Value System</div>
+                                <div class="text-center text-sm font-semibold text-[#0077B6] mb-2 p-2 border-b-2 border-t-2 border-dashed border-[#90E0EF]">Guiding Principles</div>
+                                <div class="text-center text-sm font-semibold text-[#0077B6] mb-2 p-2 border-b-2 border-dashed border-[#90E0EF]">Governance</div>
+                                <div class="bg-[#00A8E8] text-white p-4 rounded-lg text-center font-bold text-xl my-2">Service Value Chain</div>
+                                <div class="text-center text-sm font-semibold text-[#0077B6] mt-2 p-2 border-b-2 border-t-2 border-dashed border-[#90E0EF]">Practices</div>
+                                <div class="text-center text-sm font-semibold text-[#0077B6] mt-2 p-2 border-b-2 border-t-2 border-dashed border-[#90E0EF]">Continual Improvement</div>
+                            </div>
+                             <div class="text-center col-span-1">
+                                <div class="text-4xl">→</div>
+                                <div class="font-bold text-2xl text-[#00446A]">Value</div>
+                                <div class="text-4xl">→</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="svc" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-[#00446A]">The Service Value Chain</h2>
+                        <p class="text-lg text-[#0077B6] max-w-3xl mx-auto">The central element of the SVS is the Service Value Chain, an operating model which outlines the key activities required to respond to demand and facilitate value realization.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 flex-wrap">
+                        <div class="bg-[#00A8E8] text-white p-4 rounded-lg shadow-md text-center w-48 h-24 flex items-center justify-center"><strong>Plan</strong></div>
+                        <div class="flowchart-arrow hidden md:block">→</div>
+                        <div class="bg-[#00A8E8] text-white p-4 rounded-lg shadow-md text-center w-48 h-24 flex items-center justify-center"><strong>Improve</strong></div>
+                        <div class="flowchart-arrow hidden md:block">→</div>
+                        <div class="bg-[#00A8E8] text-white p-4 rounded-lg shadow-md text-center w-48 h-24 flex items-center justify-center"><strong>Engage</strong></div>
+                        <div class="flowchart-arrow hidden md:block">→</div>
+                        <div class="bg-[#00A8E8] text-white p-4 rounded-lg shadow-md text-center w-48 h-24 flex items-center justify-center"><strong>Design & Transition</strong></div>
+                        <div class="flowchart-arrow hidden md:block">→</div>
+                        <div class="bg-[#00A8E8] text-white p-4 rounded-lg shadow-md text-center w-48 h-24 flex items-center justify-center"><strong>Obtain / Build</strong></div>
+                        <div class="flowchart-arrow hidden md:block">→</div>
+                        <div class="bg-[#00A8E8] text-white p-4 rounded-lg shadow-md text-center w-48 h-24 flex items-center justify-center"><strong>Deliver & Support</strong></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practices" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                     <div class="text-center mb-6">
+                        <h2 class="text-3xl font-bold text-[#00446A]">7 Core ITIL Practices</h2>
+                        <p class="text-lg text-[#0077B6] max-w-3xl mx-auto">While ITIL 4 includes many practices, the Foundation exam focuses heavily on these seven. The chart below shows a conceptual representation of their relative importance and frequency in typical service management environments.</p>
+                    </div>
+                    <div class="chart-container h-[500px] md:h-96">
+                         <canvas id="corePracticesChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+             <section id="exam" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#00446A]">Ready for the Exam?</h2>
+                    <p class="text-lg text-[#0077B6]">Here are the key numbers for the ITIL 4 Foundation certification exam.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-xl p-8 text-center">
+                        <div class="text-6xl font-bold text-[#00A8E8]">40</div>
+                        <div class="text-xl font-semibold text-[#00446A] mt-2">Multiple Choice Questions</div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-8 text-center">
+                        <div class="text-6xl font-bold text-[#00A8E8]">60</div>
+                        <div class="text-xl font-semibold text-[#00446A] mt-2">Minutes to Complete</div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-8 text-center">
+                        <div class="text-6xl font-bold text-[#00A8E8]">65%</div>
+                        <div class="text-xl font-semibold text-[#00446A] mt-2">Required to Pass (26/40)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="roadmap" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 text-center">
+                    <h2 class="text-3xl font-bold text-[#00446A] mb-4">Your ITIL Certification Roadmap</h2>
+                    <p class="text-lg text-[#0077B6] max-w-3xl mx-auto mb-8">ITIL 4 provides a flexible certification path. Start with Foundation and build your expertise by choosing modules aligned with your professional goals.</p>
+                    <div class="flex flex-col items-center justify-center space-y-8">
+                        <div class="bg-[#90E0EF] text-[#00446A] p-6 rounded-lg shadow-md w-full max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">ITIL 4 Foundation</h3>
+                            <p class="text-sm">The entry point. Master the core concepts of the ITIL 4 framework.</p>
+                        </div>
+                        <div class="flowchart-arrow text-4xl">↓</div>
+                         <div class="bg-[#00A8E8] text-white p-6 rounded-lg shadow-md w-full max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">ITIL 4 Specialist</h3>
+                            <ul class="list-none text-left space-y-2 mt-2">
+                                <li class="flex items-center"><span class="mr-2">✔️</span>Create, Deliver & Support (CDS)</li>
+                                <li class="flex items-center"><span class="mr-2">✔️</span>Drive Stakeholder Value (DSV)</li>
+                                <li class="flex items-center"><span class="mr-2">✔️</span>High-Velocity IT (HVIT)</li>
+                                <li class="flex items-center"><span class="mr-2">✔️</span>Acquiring & Managing Products (AMAP)</li>
+                                <li class="flex items-center"><span class="mr-2">✔️</span>Managing Professional (MP)</li>
+                            </ul>
+                            <p class="text-sm mt-4 text-center">Develop deep expertise in a specific area of service management.</p>
+                        </div>
+                        <div class="flowchart-arrow text-4xl">↓</div>
+                         <div class="bg-[#0077B6] text-white p-6 rounded-lg shadow-md w-full max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">ITIL 4 Strategist / Leader</h3>
+                            <p class="text-sm">Direct, Plan & Improve (DPI) & Digital & IT Strategy (DITS). For aspiring IT leaders and managers.</p>
+                        </div>
+                         <div class="flowchart-arrow text-4xl">↓</div>
+                         <div class="bg-[#00446A] text-white p-6 rounded-lg shadow-md w-full max-w-md">
+                            <h3 class="text-2xl font-bold mb-2">ITIL 4 Master</h3>
+                            <p class="text-sm">The highest level of certification. Demonstrate a deep, practical understanding of ITIL principles.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <footer class="text-center mt-12">
+            <p class="text-[#0077B6]">A Learning Guide by &copy; 2025 FELIXENT. Good luck with your certification!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(label, maxWidth) {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const sharedTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const fourDimensionsCtx = document.getElementById('fourDimensionsChart').getContext('2d');
+        const fourDimensionsData = {
+            labels: [
+                'Organizations & People',
+                'Information & Technology',
+                'Partners & Suppliers',
+                'Value Streams & Processes'
+            ].map(label => wrapLabel(label, 16)),
+            datasets: [{
+                label: 'Four Dimensions',
+                data: [25, 25, 25, 25],
+                backgroundColor: [
+                    '#00446A',
+                    '#0077B6',
+                    '#00A8E8',
+                    '#90E0EF'
+                ],
+                borderColor: '#FFFFFF',
+                borderWidth: 4,
+                hoverOffset: 4
+            }]
+        };
+        new Chart(fourDimensionsCtx, {
+            type: 'doughnut',
+            data: fourDimensionsData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...sharedTooltipCallback,
+                plugins: {
+                    ...sharedTooltipCallback.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#00446A',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const corePracticesCtx = document.getElementById('corePracticesChart').getContext('2d');
+        const corePracticesData = {
+            labels: [
+                'Continual Improvement', 
+                'Change Enablement', 
+                'Incident Management', 
+                'Problem Management', 
+                'Service Request Management', 
+                'Service Desk', 
+                'Service Level Management'
+            ].map(label => wrapLabel(label, 16)),
+            datasets: [{
+                label: 'Conceptual Importance/Frequency',
+                data: [95, 90, 88, 82, 80, 75, 70],
+                backgroundColor: '#0077B6',
+                borderColor: '#00446A',
+                borderWidth: 2,
+                borderRadius: 5
+            }]
+        };
+        new Chart(corePracticesCtx, {
+            type: 'bar',
+            data: corePracticesData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                           color: '#00446A'
+                        }
+                    },
+                    y: {
+                         grid: {
+                            display: false
+                        },
+                        ticks: {
+                           color: '#00446A'
+                        }
+                    }
+                },
+                 ...sharedTooltipCallback,
+                plugins: {
+                    ...sharedTooltipCallback.plugins,
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
