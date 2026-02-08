@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="ITIL-Summrized">
+    <meta name="description" content="Student guide for the ITILv5 Foundation">
+    <meta name="author" content="Mosquito">
+    <link href="contents/favicon.ico" rel="icon">
+        <title>ITIL® Version 5 Foundation | Student Guidebook</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Chosen Palette: "Energetic & Playful" / "Brilliant Blues" hybrid for a futuristic Industry 5.0 look
+             Primary: #4F46E5 (Indigo 600)
+             Secondary: #06B6D4 (Cyan 500)
+             Accent: #F43F5E (Rose 500)
+             Background: #F8FAFC (Slate 50)
+             Text: #1E293B (Slate 800)
+        -->
+        <style>
+            /* Custom Chart Container Styles */
+            .chart-container {
+                position: relative;
+                width: 100%;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 350px;
+                max-height: 400px;
+            }
+            @media (min-width: 768px) {
+                .chart-container {
+                    height: 400px;
+                }
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #4F46E5;
+                border-radius: 5px;
+            }
+
+            /* Card Hover Effects */
+            .hover-lift {
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Flow Diagram Arrows */
+            .arrow-down {
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 15px solid #4F46E5;
+                margin: 10px auto;
+            }
+        </style>
+        <!--
+        Source Material Integration Plan:
+        1. Introduction: Contextualize ITIL v5 (2026 release, Industry 5.0 focus) based on Course Overview.
+        2. Module 1: Define core terms (Service, Product, Value Co-creation) using card layout for "Flashcard" feel.
+        3. Module 2: Visualize 4 Dimensions using a 2x2 CSS Grid diagram.
+        4. Module 3: Explain Lifecycle using a structured list/flow.
+        5. Module 4: Use Chart.js Doughnut for 7 Guiding Principles (Goal: Inform/Organize). Use CSS diagram for SVS.
+        6. Module 5: Value Streams explained via Process Flow logic.
+        7. Module 6: AI & ITIL v5. Use Bar Chart to show AI impact (Goal: Compare/Change).
+        8. Module 7: Framework comparison (ITIL vs DevOps vs Prince2) using Radar Chart (Goal: Compare).
+        -->
+    </head>
+    <body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+        <!-- HERO SECTION -->
+        <header class="bg-gradient-to-r from-indigo-700 to-cyan-600 text-white shadow-lg">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">ITIL® Version 5 Foundation</h1>
+                <h2 class="text-xl md:text-2xl font-light opacity-90 mb-8">Comprehensive Student Guidebook: Modules 1-7</h2>
+                <p class="max-w-3xl mx-auto text-lg opacity-90">
+                    Navigating Digital Product Lifecycles, AI-Native Governance, and Industry 5.0.
+                    A complete guide to the modern service management landscape of 2026.
+                </p>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT GRID -->
+        <main class="container mx-auto px-4 py-12 space-y-20">
+
+            <!-- MODULE 1: TERMS & DEFINITIONS -->
+            <section id="module-1" class="scroll-mt-20">
+                <div class="text-center mb-10">
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 1</span>
+                    <h3 class="text-3xl font-bold mt-2 text-slate-900">Key Terms & Definitions</h3>
+                    <p class="text-slate-600 max-w-2xl mx-auto mt-3">Foundational concepts defining the language of modern digital service management.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-indigo-500 hover-lift">
+                        <h4 class="text-xl font-bold text-indigo-700 mb-2">Value Co-Creation</h4>
+                        <p class="text-sm text-slate-600">
+                            Value is no longer delivered in a unidirectional flow. It is <strong>co-created</strong> through an active collaboration between providers and consumers, as well as other organizations that are part of the relevant service relationships.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-cyan-500 hover-lift">
+                        <h4 class="text-xl font-bold text-cyan-700 mb-2">Service</h4>
+                        <p class="text-sm text-slate-600">
+                            A means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks.
+                        </p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-rose-500 hover-lift">
+                        <h4 class="text-xl font-bold text-rose-700 mb-2">Service Relationship</h4>
+                        <p class="text-sm text-slate-600">
+                            The cooperation between a service provider and service consumer. It includes service provision, service consumption, and service relationship management.
+                        </p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-indigo-500 hover-lift">
+                        <h4 class="text-xl font-bold text-indigo-700 mb-2">Product</h4>
+                        <p class="text-sm text-slate-600">
+                            A configuration of an organization’s resources designed to offer value for a consumer. Products are complex systems that include hardware, software, and people.
+                        </p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-cyan-500 hover-lift">
+                        <h4 class="text-xl font-bold text-cyan-700 mb-2">Service Offering</h4>
+                        <p class="text-sm text-slate-600">
+                            A formal description of one or more services, designed to address the needs of a target consumer group. It may include goods, access to resources, and service actions.
+                        </p>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-rose-500 hover-lift">
+                        <h4 class="text-xl font-bold text-rose-700 mb-2">Organization</h4>
+                        <p class="text-sm text-slate-600">
+                            A person or a group of people that has its own functions with responsibilities, authorities, and relationships to achieve its objectives.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 2: FOUR DIMENSIONS -->
+            <section id="module-2" class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="bg-cyan-100 text-cyan-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 2</span>
+                        <h3 class="text-3xl font-bold mt-2 mb-4 text-slate-900">The Four Dimensions</h3>
+                        <p class="text-slate-600 mb-4">
+                            To ensure a holistic approach to service management, ITIL v5 emphasizes four dimensions. Failing to address any one of these can result in services that are undeliverable or fail to meet expectations.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1 flex-shrink-0">1</span>
+                                <span class="text-sm text-slate-700"><strong>Organizations & People:</strong> Roles, skills, culture, and organizational structure.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-cyan-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1 flex-shrink-0">2</span>
+                                <span class="text-sm text-slate-700"><strong>Information & Technology:</strong> The technology stacks, databases, AI systems, and information architectures used.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-rose-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1 flex-shrink-0">3</span>
+                                <span class="text-sm text-slate-700"><strong>Partners & Suppliers:</strong> Relationships, contracts, and dependencies on external vendors.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-emerald-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-1 flex-shrink-0">4</span>
+                                <span class="text-sm text-slate-700"><strong>Value Streams & Processes:</strong> The workflows and activities that convert inputs into outputs.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <p class="text-xs text-slate-500 font-semibold uppercase mb-1">External Factors (PESTLE)</p>
+                            <p class="text-sm text-slate-600">All four dimensions are constrained or influenced by external factors: <strong>P</strong>olitical, <strong>E</strong>conomic, <strong>S</strong>ocial, <strong>T</strong>echnological, <strong>L</strong>egal, and <strong>E</strong>nvironmental.</p>
+                        </div>
+                    </div>
+
+                    <!-- Diagram for 4 Dimensions -->
+                    <div class="relative w-full aspect-square max-w-md mx-auto">
+                        <div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4">
+                            <div class="bg-indigo-50 flex items-center justify-center p-4 text-center border-2 border-indigo-200 rounded-xl">
+                                <div>
+                                    <div class="text-2xl mb-1">👥</div>
+                                    <div class="font-bold text-indigo-800">Organizations & People</div>
+                                </div>
+                            </div>
+                            <div class="bg-cyan-50 flex items-center justify-center p-4 text-center border-2 border-cyan-200 rounded-xl">
+                                <div>
+                                    <div class="text-2xl mb-1">💻</div>
+                                    <div class="font-bold text-cyan-800">Information & Technology</div>
+                                </div>
+                            </div>
+                            <div class="bg-rose-50 flex items-center justify-center p-4 text-center border-2 border-rose-200 rounded-xl">
+                                <div>
+                                    <div class="text-2xl mb-1">🤝</div>
+                                    <div class="font-bold text-rose-800">Partners & Suppliers</div>
+                                </div>
+                            </div>
+                            <div class="bg-emerald-50 flex items-center justify-center p-4 text-center border-2 border-emerald-200 rounded-xl">
+                                <div>
+                                    <div class="text-2xl mb-1">🔄</div>
+                                    <div class="font-bold text-emerald-800">Value Streams & Processes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white shadow-xl rounded-full w-24 h-24 flex items-center justify-center border-4 border-slate-100 z-10">
+                                <span class="font-bold text-slate-800 text-sm text-center">Value<br>Creation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 3: PRODUCT & SERVICE LIFECYCLE -->
+            <section id="module-3">
+                <div class="text-center mb-10">
+                    <span class="bg-rose-100 text-rose-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 3</span>
+                    <h3 class="text-3xl font-bold mt-2 text-slate-900">Product & Service Lifecycle</h3>
+                    <p class="text-slate-600 max-w-2xl mx-auto mt-3">From conception to retirement, managing the pulse of digital products.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-center items-stretch gap-4 overflow-x-auto pb-4">
+                    <!-- Step 1 -->
+                    <div class="flex-1 min-w-[200px] bg-white border border-slate-200 rounded-lg p-5 relative">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mb-3">1</div>
+                        <h4 class="font-bold text-lg mb-2">Explore & Plan</h4>
+                        <p class="text-sm text-slate-600">Understanding market needs, defining strategy, and conceptualizing the product vision.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:flex flex-col justify-center text-slate-300 text-2xl">➔</div>
+                    <!-- Step 2 -->
+                    <div class="flex-1 min-w-[200px] bg-white border border-slate-200 rounded-lg p-5">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mb-3">2</div>
+                        <h4 class="font-bold text-lg mb-2">Design & Build</h4>
+                        <p class="text-sm text-slate-600">Architecting the solution, developing software, and establishing service parameters.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:flex flex-col justify-center text-slate-300 text-2xl">➔</div>
+                    <!-- Step 3 -->
+                    <div class="flex-1 min-w-[200px] bg-white border border-slate-200 rounded-lg p-5">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mb-3">3</div>
+                        <h4 class="font-bold text-lg mb-2">Transition & Deploy</h4>
+                        <p class="text-sm text-slate-600">Testing, validating, and moving the product into the live environment.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:flex flex-col justify-center text-slate-300 text-2xl">➔</div>
+                    <!-- Step 4 -->
+                    <div class="flex-1 min-w-[200px] bg-white border border-slate-200 rounded-lg p-5">
+                        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mb-3">4</div>
+                        <h4 class="font-bold text-lg mb-2">Deliver & Support</h4>
+                        <p class="text-sm text-slate-600">Operational management, incident handling, and ensuring value realization.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 4: ITIL VALUE SYSTEM & GUIDING PRINCIPLES -->
+            <section id="module-4" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left: SVS Explanation -->
+                <div class="bg-indigo-900 text-white p-8 rounded-2xl">
+                    <span class="bg-indigo-700 text-indigo-100 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 4</span>
+                    <h3 class="text-3xl font-bold mt-4 mb-4">The ITIL Service Value System (SVS)</h3>
+                    <p class="text-indigo-200 mb-6">
+                        The SVS represents how all the components and activities of the organization work together to facilitate value creation.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-indigo-800 p-4 rounded-lg">
+                            <h5 class="font-bold text-amber-400">Governance</h5>
+                            <p class="text-xs text-indigo-200">The means by which the organization is directed and controlled.</p>
+                        </div>
+                        <div class="bg-indigo-800 p-4 rounded-lg">
+                            <h5 class="font-bold text-amber-400">Service Value Chain</h5>
+                            <p class="text-xs text-indigo-200">The central element: An operating model which outlines the key activities required to respond to demand.</p>
+                        </div>
+                        <div class="bg-indigo-800 p-4 rounded-lg">
+                            <h5 class="font-bold text-amber-400">Practices</h5>
+                            <p class="text-xs text-indigo-200">Sets of organizational resources designed for performing work or accomplishing an objective.</p>
+                        </div>
+                        <div class="bg-indigo-800 p-4 rounded-lg">
+                            <h5 class="font-bold text-amber-400">Continual Improvement</h5>
+                            <p class="text-xs text-indigo-200">A recurring organizational activity performed at all levels to ensure that organization's performance aligns with expectations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Guiding Principles Chart -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center">
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">The 7 Guiding Principles</h4>
+                    <p class="text-sm text-slate-500 mb-6 text-center">Universal recommendations for service management.</p>
+
+                    <div class="chart-container">
+                        <canvas id="principlesChart"></canvas>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4 text-center italic">Hover over slices for definitions.</p>
+                </div>
+            </section>
+
+            <!-- MODULE 5: VALUE STREAMS -->
+            <section id="module-5" class="bg-slate-100 rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 5</span>
+                    <h3 class="text-3xl font-bold mt-2 text-slate-900">Value Stream Management</h3>
+                    <p class="text-slate-600">Identifying and mapping the series of steps an organization undertakes to create and deliver products and services.</p>
+                </div>
+
+                <div class="space-y-6 max-w-4xl mx-auto">
+                    <!-- Concept 1 -->
+                    <div class="flex items-start md:items-center flex-col md:flex-row bg-white p-4 rounded-lg shadow-sm">
+                        <div class="w-full md:w-1/4 font-bold text-emerald-600 mb-2 md:mb-0">Identification</div>
+                        <div class="w-full md:w-3/4 text-sm text-slate-600">Recognizing specific streams (e.g., "New User Onboarding" or "Incident Resolution") rather than isolating departments.</div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="arrow-down"></div>
+                    <!-- Concept 2 -->
+                    <div class="flex items-start md:items-center flex-col md:flex-row bg-white p-4 rounded-lg shadow-sm">
+                        <div class="w-full md:w-1/4 font-bold text-emerald-600 mb-2 md:mb-0">Mapping</div>
+                        <div class="w-full md:w-3/4 text-sm text-slate-600">Visualizing the current state (as-is) to identify bottlenecks, waste, and wait times.</div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="arrow-down"></div>
+                    <!-- Concept 3 -->
+                    <div class="flex items-start md:items-center flex-col md:flex-row bg-white p-4 rounded-lg shadow-sm">
+                        <div class="w-full md:w-1/4 font-bold text-emerald-600 mb-2 md:mb-0">Optimization</div>
+                        <div class="w-full md:w-3/4 text-sm text-slate-600">Applying the principle "Optimize and Automate" to streamline the flow from demand to value.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODULE 6 & 7 GRID -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- MODULE 6: ITIL & AI -->
+                <section id="module-6" class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-purple-500">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 6</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-4 text-slate-900">ITIL & Artificial Intelligence</h3>
+                    <p class="text-sm text-slate-600 mb-6">
+                        ITIL v5 addresses the Industry 5.0 shift, where AI is not just a tool but a governance subject. Key areas include AIOps, chatbot integration, and predictive analytics.
+                    </p>
+                    <h4 class="font-bold text-sm text-slate-700 mb-4">Projected Impact of AI on Service Management</h4>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="aiChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- MODULE 7: FRAMEWORKS -->
+                <section id="module-7" class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-orange-500">
+                    <span class="bg-orange-100 text-orange-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wide">Module 7</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-4 text-slate-900">ITIL & Other Frameworks</h3>
+                    <p class="text-sm text-slate-600 mb-6">
+                        ITIL does not exist in a vacuum. It integrates with DevOps for speed and PRINCE2 for structured project delivery.
+                    </p>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="frameworkChart"></canvas>
+                    </div>
+                    <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+                        <div class="text-indigo-600 font-bold">ITIL v5</div>
+                        <div class="text-rose-500 font-bold">DevOps</div>
+                        <div class="text-amber-500 font-bold">PRINCE2</div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-800 text-slate-300 py-10 mt-20">
+            <div class="container mx-auto px-6 text-center">
+                <p class="mb-4 text-sm">Generated for ITIL® Version 5 Foundation Course Review.</p>
+                <p class="text-xs opacity-50">© 2026 Felixent-Educational Resource. ITIL® is a registered trademark of AXELOS Limited.</p>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FOR CHARTS -->
+        <script>
+            // --- UTILITY: Label Wrapping Logic (>16 chars) ---
+            function wrapLabel(label) {
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if (currentLine.length + 1 + words[i].length <= 16) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            }
+
+            // --- COMMON CONFIG ---
+            const commonOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { boxWidth: 12, padding: 15, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) return label.join(' ');
+                                return label;
+                            }
+                        }
+                    }
+                }
+            };
+
+            // --- CHART 1: Guiding Principles (Doughnut) ---
+            const principlesData = [
+                "Focus on Value",
+                "Start Where You Are",
+                "Progress Iteratively",
+                "Collaborate & Promote",
+                "Think & Work Holistically",
+                "Keep it Simple",
+                "Optimize & Automate"
+            ];
+
+            new Chart(document.getElementById('principlesChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: principlesData.map(wrapLabel),
+                    datasets: [{
+                        data: [1, 1, 1, 1, 1, 1, 1], // Equal weight
+                        backgroundColor: [
+                            '#4F46E5', '#4338CA', '#3730A3', '#06B6D4', '#0891B2', '#F43F5E', '#E11D48'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    ...commonOptions,
+                    cutout: '60%',
+                    plugins: {
+                        ...commonOptions.plugins,
+                        legend: { display: false } // Hide legend for cleaner look, rely on tooltip/context
+                    }
+                }
+            });
+
+            // --- CHART 2: AI Impact (Bar) ---
+            const aiLabels = ["Routine Automation", "Incident Speed", "Predictive Accuracy", "Human Error Reduction"];
+            new Chart(document.getElementById('aiChart'), {
+                type: 'bar',
+                data: {
+                    labels: aiLabels.map(wrapLabel),
+                    datasets: [{
+                        label: 'Improvement % with AI',
+                        data: [85, 60, 75, 90], // Hypothetical representative data
+                        backgroundColor: '#8B5CF6',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    ...commonOptions,
+                    scales: {
+                        y: { beginAtZero: true, max: 100, grid: { display: false } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // --- CHART 3: Framework Comparison (Radar) ---
+            new Chart(document.getElementById('frameworkChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Service Value', 'Development Speed', 'Structured Control', 'Flexibility', 'Project Focus'],
+                    datasets: [{
+                        label: 'ITIL v5',
+                        data: [90, 60, 70, 75, 50],
+                        borderColor: '#4F46E5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                        pointBackgroundColor: '#4F46E5'
+                    }, {
+                        label: 'DevOps',
+                        data: [70, 95, 40, 90, 30],
+                        borderColor: '#F43F5E',
+                        backgroundColor: 'rgba(244, 63, 94, 0.2)',
+                        pointBackgroundColor: '#F43F5E'
+                    }, {
+                        label: 'PRINCE2',
+                        data: [50, 40, 95, 40, 95],
+                        borderColor: '#F59E0B',
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                        pointBackgroundColor: '#F59E0B'
+                    }]
+                },
+                options: {
+                    ...commonOptions,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: '#e2e8f0' },
+                            pointLabels: { font: { size: 11 } },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
